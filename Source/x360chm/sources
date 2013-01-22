@@ -1,0 +1,30 @@
+
+#	HID Minidriver for Microsoft Xbox 360 Controller
+
+TARGETNAME=x360chm
+TARGETTYPE=DRIVER
+
+DRIVERTYPE=WDM
+
+SOURCES=\
+	driver.c					\
+	add_device.c				\
+	pnp.c						\
+	usb.c						\
+	internal_device_control.c	\
+	setting.c					\
+	report.c					\
+	math.c						\
+	power.c						\
+	unload.c					\
+	common.c					\
+	resource.rc
+
+TARGETLIBS=\
+		$(DDK_LIB_PATH)\hidclass.lib	\
+		$(DDK_LIB_PATH)\Usbd.lib
+
+NTTARGETFILES=$(OBJ_PATH)\$(O)\$(TARGETNAME).inf
+
+MISCFILES=$(NTTARGETFILES)
+

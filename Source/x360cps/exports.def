@@ -1,0 +1,9 @@
+
+;	Property Sheet for Microsoft Xbox 360 Controller
+
+LIBRARY		"x360cps.dll"
+
+EXPORTS
+	DllGetClassObject	PRIVATE
+	DllCanUnloadNow		PRIVATE
+

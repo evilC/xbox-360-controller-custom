@@ -1,0 +1,44 @@
+
+#	Property Sheet for Microsoft Xbox 360 Controller
+
+TARGETNAME=x360cps
+TARGETTYPE=DYNLINK
+
+USE_MSVCRT=1
+
+C_DEFINES=$(C_DEFINES) /DUNICODE /D_UNICODE
+
+DLLENTRY=_DllMainCRTStartup
+DLLDEF=..\exports.def
+
+SOURCES=\
+	..\extension.cpp			\
+	..\com.cpp					\
+	..\property_sheet.cpp		\
+	..\page.cpp					\
+	..\controller_page.cpp		\
+	..\stick_page.cpp			\
+	..\directional_pad_page.cpp	\
+	..\trigger_page.cpp			\
+	..\button_page.cpp			\
+	..\actuator_page.cpp		\
+	..\advanced_page.cpp		\
+	..\save_dialog.cpp			\
+	..\setting.cpp				\
+	..\device.cpp				\
+	..\report.cpp				\
+	..\math.cpp					\
+	..\resource.en.rc
+
+TARGETLIBS=\
+		$(SDK_LIB_PATH)\kernel32.lib	\
+		$(SDK_LIB_PATH)\user32.lib		\
+		$(SDK_LIB_PATH)\uuid.lib		\
+		$(SDK_LIB_PATH)\advapi32.lib	\
+		$(SDK_LIB_PATH)\setupapi.lib	\
+		$(SDK_LIB_PATH)\hid.lib
+
+NTTARGETFILES=$(OBJ_PATH)\$(O)\$(TARGETNAME).inf
+
+MISCFILES=$(NTTARGETFILES)
+

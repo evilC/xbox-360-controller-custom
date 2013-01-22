@@ -1,0 +1,29 @@
+
+#	Status Area Icon for Microsoft Xbox 360 Controller
+
+TARGETNAME=x360csai
+TARGETTYPE=PROGRAM
+
+USE_MSVCRT=1
+
+C_DEFINES=$(C_DEFINES) /DUNICODE /D_UNICODE
+
+UMENTRY=winmain
+UMTYPE=windows
+
+SOURCES=\
+	..\application.cpp			\
+	..\status_area_icon.cpp		\
+	..\property_sheet.cpp		\
+	..\setting.cpp				\
+	..\device.cpp				\
+	..\resource.en.rc
+
+TARGETLIBS=\
+		$(SDK_LIB_PATH)\kernel32.lib	\
+		$(SDK_LIB_PATH)\comctl32.lib	\
+		$(SDK_LIB_PATH)\setupapi.lib	\
+		$(SDK_LIB_PATH)\shell32.lib		\
+		$(SDK_LIB_PATH)\ole32.lib		\
+		$(SDK_LIB_PATH)\hid.lib
+

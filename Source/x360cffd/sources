@@ -1,0 +1,28 @@
+
+#	Force Feedback Driver for Microsoft Xbox 360 Controller
+
+TARGETNAME=x360cffd
+TARGETTYPE=DYNLINK
+
+USE_MSVCRT=1
+
+C_DEFINES=$(C_DEFINES) /DUNICODE /D_UNICODE
+
+DLLENTRY=_DllMainCRTStartup
+DLLDEF=exports.def
+
+SOURCES=\
+	extension.cpp				\
+	com.cpp						\
+	effect_driver.cpp			\
+	effect.cpp					\
+	resource.rc
+
+TARGETLIBS=\
+		$(SDK_LIB_PATH)\kernel32.lib	\
+		$(SDK_LIB_PATH)\uuid.lib
+
+NTTARGETFILES=$(OBJ_PATH)\$(O)\$(TARGETNAME).inf
+
+MISCFILES=$(NTTARGETFILES)
+

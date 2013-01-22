@@ -1,0 +1,9 @@
+
+;	Force Feedback Driver for Microsoft Xbox 360 Controller
+
+LIBRARY		"x360cffd.dll"
+
+EXPORTS
+	DllGetClassObject	PRIVATE
+	DllCanUnloadNow		PRIVATE
+

@@ -1,0 +1,5 @@
+DIRS= \
+     x360cffd \
+     x360chm \
+     x360cps \
+     x360csai
